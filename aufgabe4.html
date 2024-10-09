@@ -1,0 +1,246 @@
+y <a href="desktop.ini"></a><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+
+        .container {
+            background-color: black;
+
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            animation: borderf 3s infinite alternate;
+        }
+
+        @keyframes borderf {
+            0% {
+                box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+            }
+
+            25% {
+                box-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue;
+            }
+
+            50% {
+                box-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green, 0 0 40px green;
+            }
+
+            75% {
+                box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow;
+            }
+
+            100% {
+                box-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: white;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select,
+        input[type="date"],
+        input[type="range"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .radio-group label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .range-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+            /* Fügt einen Abstand zwischen Slider und dem nächsten Element hinzu */
+        }
+
+        #rangeValue {
+            font-size: 1.5rem;
+            /* Macht den Text größer */
+            color: white;
+            margin-top: 10px;
+            /* Fügt einen Abstand zwischen Slider und der Zahl hinzu */
+            text-align: center;
+            /* Zentriert den Text */
+        }
+
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 15px;
+        }
+
+        legend {
+            padding: 0 10px;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        input[type="submit"] {
+            background-color: black;
+            color: #fff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            animation: borderf 3s infinite alternate;
+        }
+
+        /* Make button adapt to screen size */
+        @media (max-width: 768px) {
+            input[type="submit"] {
+                font-size: 1.1rem;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            input[type="submit"] {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Kundenfeedback</h1>
+        <form action="aufgabe4.html">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Name" required>
+
+            <label for="email">E-Mail:</label>
+            <input type="email" name="email" id="email" placeholder="E-Mail" required>
+
+            <label for="feedback">Feedback:</label>
+            <textarea name="feedback" id="feedback" cols="800" rows="5" placeholder="Ihr Feedback" required></textarea>
+
+            <label for="satisfaction">Wie zufrieden waren Sie?</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="satisfaction" value="Sehr unzufrieden" required> Sehr unzufrieden
+                </label>
+                <label>
+                    <input type="radio" name="satisfaction" value="eher unzufrieden"> Eher unzufrieden
+                </label>
+                <label>
+                    <input type="radio" name="satisfaction" value="eher zufrieden"> Eher zufrieden
+                </label>
+                <label>
+                    <input type="radio" name="satisfaction" value="Sehr zufrieden"> Sehr zufrieden
+                </label>
+            </div>
+
+            <label for="produkt">Produktkategorie:</label>
+            <select name="produkt" id="produkt" required>
+                <option value="" disabled selected>Wählen Sie eine Kategorie</option>
+                <option value="Haushaltswaren">Haushaltswaren</option>
+                <option value="Verbrauchsmaterial">Verbrauchsmaterial</option>
+                <option value="Unterhaltungselektronik">Unterhaltungselektronik</option>
+            </select>
+
+            <label for="newsletter">Möchten Sie den Newsletter abonnieren?</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="newsletter" value="ja" required> Ja
+                </label>
+                <label>
+                    <input type="radio" name="newsletter" value="nein"> Nein
+                </label>
+            </div>
+
+            <label for="kaufsdatum">Kaufsdatum des Produkts:</label>
+            <input type="date" name="kaufsdatum" id="kaufsdatum" min="2020-01-01" required>
+
+
+            <label for="slider">Bewertung des Preis-Leistungs-Verhältnisses:</label>
+            <div class="range-group">
+                <input type="range" name="slider" id="slider" min="0" max="100" step="10"
+                    oninput="updateValue(this.value)">
+
+                <span id="rangeValue">50%</span>
+            </div>
+
+            <fieldset>
+                <legend>Formular absenden</legend>
+                <input type="submit" name="senden" id="senden" value="Absenden">
+            </fieldset>
+        </form>
+    </div>
+
+    <script>
+            function updateValue(value) {
+                document.getElementById('rangeValue').textContent = value + "%";
+            }
+    
+            function setCurrentDate() {
+                const today = new Date(); 
+                const year = today.getFullYear(); 
+                const month = String(today.getMonth() + 1).padStart(2, '0'); 
+                const day = String(today.getDate()).padStart(2, '0'); 
+
+                const formattedDate = `${year}-${month}-${day}`; 
+
+              
+                document.getElementById('kaufsdatum').value = formattedDate;
+            }
+
+            
+            window.onload = setCurrentDate;
+    </script>
+</body>
+
+</html>
